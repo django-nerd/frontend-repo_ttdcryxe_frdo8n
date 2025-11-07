@@ -1,15 +1,13 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
 
 const Hero3D = () => {
   return (
     <section id="home" className="relative min-h-[90vh] w-full overflow-hidden bg-[#0b1b2b]">
-      {/* 3D background */}
+      {/* Background: layered animated gradients to emulate depth without external 3D */}
       <div className="absolute inset-0">
-        <Spline
-          scene="https://prod.spline.design/5q6lqg9y04tSk2W1/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-        />
+        <div className="pointer-events-none absolute -top-24 -left-24 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(199,168,107,0.45),transparent_60%)] blur-3xl animate-spin" style={{ animationDuration: '60s' }} />
+        <div className="pointer-events-none absolute -bottom-32 -right-16 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.08),transparent_60%)] blur-3xl animate-spin" style={{ animationDuration: '90s' }} />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.035)_0%,rgba(255,255,255,0.02)_100%)]" />
       </div>
 
       {/* Soft gradient overlay to improve contrast */}
